@@ -1,0 +1,27 @@
+$brand-color: #3e3934;
+.profile-image {
+    img {
+        border: solid 4px $brand-color;
+        border-radius: 50%;
+    }
+}
+.profile-info {
+    color: $brand-color;
+    .profile-job-title {
+        font-size: 18px;
+    }
+    .profile-contact {
+        font-size: 14px;
+        word-wrap: break-word;
+    }
+}
+.profile-summary {
+    font-size: 16px;
+    text-align: justify;
+}
+
+@media (min-width: 768px) { 
+    .profile-summary {
+        text-align: left;
+    }
+}
