@@ -1,4 +1,4 @@
-# Gbm Challenge Carlos Barrera
+# Gbm Challenge por Carlos Barrera
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
@@ -12,7 +12,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 The graph component was developed with [plotly.js](https://plot.ly/javascript/)
 
-##Authentication and Deployment
+## Authentication and Deployment
 
 For authentication and deployment I used [Firebase](https://console.firebase.google.com) as my BaaS provider.
 
