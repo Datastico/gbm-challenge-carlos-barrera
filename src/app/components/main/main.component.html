@@ -1,7 +1,14 @@
 <div class="row">
   <div class="col-md-9">
-    <app-table></app-table>
-    <app-graph></app-graph>
+      <app-intro></app-intro>
+      <div class="text-center mt-5">
+        <div class="btn-group">
+          <button class="btn" (click)="viewGraph = true;" [ngClass]="viewGraph ? 'btn-dark' : 'btn-secondary'"><i class="fa fa-area-chart"></i> Graph</button>
+          <button class="btn" (click)="viewGraph = false;" [ngClass]="!viewGraph ? 'btn-dark' : 'btn-secondary'"><i class="fa fa-table"></i> Table</button>
+        </div>
+      </div>
+      <app-table *ngIf="!viewGraph"></app-table>
+      <app-graph *ngIf="viewGraph"></app-graph>
   </div>
   <div class="col-md-3">
     <app-about-me></app-about-me>
