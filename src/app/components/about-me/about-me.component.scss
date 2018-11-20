@@ -1,5 +1,6 @@
 $brand-color: #3e3934;
 .profile-image {
+    margin-top: 40px;
     img {
         border: solid 4px $brand-color;
         border-radius: 50%;
@@ -21,6 +22,9 @@ $brand-color: #3e3934;
 }
 
 @media (min-width: 768px) { 
+    .profile-image {
+        margin-top: 0;
+    }
     .profile-summary {
         text-align: left;
     }
