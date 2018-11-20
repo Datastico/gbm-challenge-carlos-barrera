@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -11,6 +17,10 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MainComponent } from './components/main/main.component';
+import { TableComponent } from './components/table/table.component';
+
+import { IpcService } from './services/ipc.service';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +32,18 @@ import { MainComponent } from './components/main/main.component';
     LoginComponent,
     FooterComponent,
     NotFoundComponent,
-    MainComponent
+    MainComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'gbm-challenge-carlos-barrera'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [IpcService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

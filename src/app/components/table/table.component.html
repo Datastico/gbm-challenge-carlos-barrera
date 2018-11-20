@@ -1,0 +1,27 @@
+<div>
+  <h3 class="mt-5">IPC - Table View</h3>
+  <div class="mb-4" *ngIf="ipc.resultObj === null">
+    No data found!
+  </div>
+  <div class="mb-4" *ngIf="ipc.resultObj !== null">(Scroll to see all the rows)</div>
+  <div class="table-wrapper-scroll-y mb-4" *ngIf="ipc.resultObj !== null">
+    <table id="table-view" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Precio</th>
+            <th>Porcentaje</th>
+            <th>Volumen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ipcRow of ipc.resultObj">
+            <td>{{ipcRow.Fecha | date:'MMM d, yyyy, H:mm:ss.SS' }}</td>
+            <td>{{ipcRow.Precio | currency:"MXN":"symbol"}}</td>
+            <td [className]="ipcRow.Porcentaje < 0 ? 'text-danger' : 'text-success'">{{ipcRow.Porcentaje}}</td>
+            <td>{{ipcRow.Volumen}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

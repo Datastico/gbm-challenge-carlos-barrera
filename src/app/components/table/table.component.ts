@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { IpcService } from '../../services/ipc.service';
 import { Ipc } from '../../models/Ipc';
-import { IpcRow } from '../../models/IpcRow';
 
 @Component({
-  selector: 'app-graph',
-  templateUrl: './graph.component.html',
-  styleUrls: ['./graph.component.scss']
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.scss']
 })
-export class GraphComponent implements OnInit {
+export class TableComponent implements OnInit {
+
   ipc: Ipc;
   constructor(private ipcService: IpcService) {}
 
@@ -17,6 +17,6 @@ export class GraphComponent implements OnInit {
       console.log(ipc);
     });
     this.ipc = this.ipcService.getFakeIpc();
-    console.log(this.ipc);
   }
+
 }

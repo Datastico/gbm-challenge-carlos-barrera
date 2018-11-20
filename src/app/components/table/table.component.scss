@@ -1,0 +1,17 @@
+.table-wrapper-scroll-y {
+    display: block;
+    max-height: 350px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+#table-view {
+    font-size: 12px;
+}
+
+@media (min-width: 768px) { 
+    #table-view {
+        width: 95%;
+        font-size: 14px;
+    }
+}

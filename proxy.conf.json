@@ -1,0 +1,7 @@
+{
+    "/Mercados/*": {
+        "target": "https://www.gbm.com.mx",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
