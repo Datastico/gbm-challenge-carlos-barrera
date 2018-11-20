@@ -24,16 +24,13 @@ export class GraphComponent implements OnInit {
     const self = this;
 
     this.ipcService.getIpc().subscribe( ipc => {
-      console.log(ipc);
+      this.ipc = ipc;
+      this.ipc.resultObj.forEach(element => {
+          self.fechas.push(element.Fecha);
+          self.precios.push(element.Precio);
+      });
+      this.basicChart();
     });
-    this.ipc = this.ipcService.getFakeIpc();
-
-    this.ipc.resultObj.forEach(element => {
-        self.fechas.push(element.Fecha);
-        self.precios.push(element.Precio);
-    });
-
-    this.basicChart();
   }
   basicChart() {
     const element = this.el.nativeElement;

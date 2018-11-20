@@ -14,9 +14,8 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.ipcService.getIpc().subscribe( ipc => {
-      console.log(ipc);
+      this.ipc = ipc;
     });
-    this.ipc = this.ipcService.getFakeIpc();
   }
 
 }
