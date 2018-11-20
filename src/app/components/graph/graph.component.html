@@ -1,10 +1,10 @@
 <div>
   <h3 class="mt-3">IPC - Graph View</h3>
-  <div class="mb-4" *ngIf="ipc.resultObj === null">
+  <div class="mt-4" *ngIf="ipc.resultObj === null">
     No data found!
   </div>
   <div #chart></div>
-  <div class="text-center">
+  <div class="text-center" *ngIf="ipc.resultObj !== null">
     <ul class="list-group graph-precios mx-auto">
       <li class="list-group-item">Max Price: <span class="text-success">{{ precioMax | currency:"MXN":"symbol" }}</span></li>
       <li class="list-group-item">Min Price: <span class="text-danger">{{ precioMin | currency:"MXN":"symbol" }}</span></li>

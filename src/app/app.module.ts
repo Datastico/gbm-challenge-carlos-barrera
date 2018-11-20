@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { MainComponent } from './components/main/main.component';
 import { TableComponent } from './components/table/table.component';
 
 import { IpcService } from './services/ipc.service';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -41,9 +43,10 @@ import { IpcService } from './services/ipc.service';
     AngularFireModule.initializeApp(environment.firebase, 'gbm-challenge-carlos-barrera'),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FlashMessagesModule.forRoot(),
     HttpClientModule
   ],
-  providers: [IpcService],
+  providers: [IpcService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
